@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Personal blog and speaking information for Peter Atkinson' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Peter Atkinson</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="logo">Peter Atkinson</a>
+        <div>
+          <a href="/">Home</a>
+          <a href="/blog">Blog</a>
+          <a href="/about">About</a>
+          <a href="/speaking">Speaking</a>
+        </div>
+      </nav>
+    </header>
+    
+    <main>
+      <slot />
+    </main>
+    
+    <footer>
+      <p>&copy; {new Date().getFullYear()} Peter Atkinson. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

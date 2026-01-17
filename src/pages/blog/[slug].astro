@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article class="container">
+    <h1>{post.data.title}</h1>
+    <div class="post-meta">
+      {new Date(post.data.date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })}
+    </div>
+    
+    <Content />
+    
+    <div class="email-signup">
+      <h3>Enjoyed this post?</h3>
+      <p>Subscribe to receive new essays and updates.</p>
+      <p style="color: #6b7280; font-size: 0.875rem;">ConvertKit form will be embedded here.</p>
+    </div>
+  </article>
+</BaseLayout>
