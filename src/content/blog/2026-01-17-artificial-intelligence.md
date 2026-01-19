@@ -2,6 +2,7 @@
 title: "Artificial Intelligence"
 description: "Why AI matters."
 date: 2026-01-17
+image: "/images/blog/computer.jpg"
 ---
 
 I don't know how to code - but I'm working in Visual Studio, committing new updates to my code repository on Github, and publishing a blog that was delayed for years.

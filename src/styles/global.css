@@ -119,6 +119,14 @@ nav a:hover {
 }
 
 /* Blog post content */
+.featured-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
 article h1 {
   margin-bottom: 0.5rem;
 }
