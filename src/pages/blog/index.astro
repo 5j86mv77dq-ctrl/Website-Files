@@ -8,6 +8,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
 
 <BaseLayout title="Blog">
   <div class="container">
+    <img src="/images/road.jpg" alt="Blog" class="featured-image" />
     <h1>Blog</h1>
     <p style="font-size: 1.25rem; color: #4b5563; margin-bottom: 3rem;">
       Essays on marketing strategy, audience development, and professional insights from Catholic media.
@@ -37,5 +38,11 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
         ))}
       </ul>
     )}
+
+    <section class="email-signup">
+      <h3>Subscribe</h3>
+      <p>Get new posts delivered to your inbox:</p>
+      <script async data-uid="69221d673c" src="https://peteratkinson.kit.com/69221d673c/index.js"></script>
+    </section>
   </div>
 </BaseLayout>
